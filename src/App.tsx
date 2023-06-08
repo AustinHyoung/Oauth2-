@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Main from './pages/Main';
+import About from './pages/About';
 
 const App = () => {
   return (
-    <div>
-      <div>vite 번들러 테스트</div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
   );
 };
 
