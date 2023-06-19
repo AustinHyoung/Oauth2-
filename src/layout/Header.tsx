@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <header>
       <BrowserView>
-        <div className="flex justify-between h-20" style={{ border: '1px solid red' }}>
-          <ul className="flex justify-center items-center">
+        <div className="flex justify-end h-20" style={{ border: '1px solid red' }}>
+          <ul className="flex justify-center items-center mx-3">
             <li className="mx-3 py-4 cursor-pointer">
               <Link to="/reservation">RESERVATION</Link>
             </li>
@@ -25,7 +25,7 @@ const Header = () => {
             </li>
           </ul>
 
-          <ul className="flex justify-end items-center text-sm">
+          <ul className="flex justify-end items-center text-sm mx-3">
             <li className="mx-3 py-4 cursor-pointer">로그인</li>
             <li className="mx-3 py-4 cursor-pointer">예약확인</li>
             <li className="mx-3 py-4 cursor-pointer">오시는길</li>
