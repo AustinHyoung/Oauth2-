@@ -5,9 +5,9 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div className="min-h-full">
+    <div className="h-full">
       <Header />
-      <main className="h-full">
+      <main className="min-h-full pb-12 bg-amber-200">
         <Outlet />
       </main>
       <Footer />

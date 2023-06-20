@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Main = () => {
   return (
     <>
-      <div className="min-h-full">
-        <div className="min-h-full">
+      <div className="">
+        <div className="">
           {Array(10)
             .fill(1)
             .map((v, i) => {
