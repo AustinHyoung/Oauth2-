@@ -7,10 +7,10 @@ const Layout = () => {
   return (
     <div className="h-full">
       <Header />
-      <main className="min-h-full pb-12 bg-amber-200">
+      <main className="min-h-full bg-amber-200 overflow-auto">
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

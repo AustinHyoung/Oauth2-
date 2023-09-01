@@ -5,17 +5,24 @@ import { Link } from 'react-router-dom';
 const Main = () => {
   return (
     <>
-      <div className="">
-        <div className="">
-          {Array(10)
-            .fill(1)
-            .map((v, i) => {
-              return <h1 className="text-3xl font-bold underline">Hello</h1>;
-            })}
-          <Link to="/about">
-            <div>VITE 번들러 테스트</div>
-          </Link>
+      <div className="snap-mandatory snap-y">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        {/* <div className="snap-center h-screen bg-green-50">
+          <div className="">Contents1</div>
         </div>
+        <div className="snap-center h-screen bg-yellow-50">Contents2</div>
+        <div className="snap-center h-screen bg-blue-50">Contents3</div>
+        <div className="snap-center h-screen bg-red-50">Contents4</div> */}
+      </div>
+      <div className="overflow-y-scroll h-60 snap-mandatory snap-y">
+        <div className="h-60 bg-slate-500 snap-center">Contents1</div>
+        <div className="h-60 bg-slate-600 snap-center">Contents1</div>
+        <div className="h-60 bg-slate-700 snap-center">Contents1</div>
+        <div className="h-60 bg-slate-800 snap-center">Contents1</div>
+        <div className="h-60 bg-slate-900 snap-center">Contents1</div>
       </div>
     </>
   );
