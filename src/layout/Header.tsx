@@ -12,7 +12,6 @@ const Header = () => {
           </ul>
         </div>
       </BrowserView>
-      <MobileView>123123123123</MobileView>
     </header>
   );
 };
