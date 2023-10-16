@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SidebarComponent = () => {
+// type 정리 고려
+type c = {
+  onCloseHandled: (val: boolean) => void;
+};
+
+const SidebarComponent = (props: c) => {
+  const [closeState, setCloseState] = useState(false);
+
+  const handleEvent = () => {
+    setCloseState(false);
+    props.onCloseHandled(closeState);
+  };
+
   return (
-    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', border: '1px solid red', width: '20%' }}>
+    <div
+      style={{
+        position: 'absolute',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        border: '1px solid red',
+        width: '20%',
+        backgroundColor: 'gray',
+      }}
+    >
       <div style={{ padding: 10, textAlign: 'end' }}>
-        <span style={{ padding: 10, textAlign: 'end', cursor: 'pointer' }}>X</span>
+        <span style={{ textAlign: 'end', cursor: 'pointer' }} onClick={handleEvent}>
+          X
+        </span>
       </div>
       <div style={{ fontSize: '2rem', padding: 10, textAlign: 'center' }}>Menu-Title</div>
       <div style={{ fontSize: '1.5rem', padding: 10, textAlign: 'center' }}>Menu1</div>
