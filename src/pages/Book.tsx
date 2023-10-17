@@ -12,9 +12,16 @@ const Book = () => {
   };
 
   return (
-    <div style={{ position: 'relative', height: '100%', backgroundColor: '#ecf0f1' }}>
-      {close && <SidebarComponent onCloseHandled={handleCloseSide} />}
-      <div onClick={handleOpenSide}>122222222222222222222222222222222222222222222222dd</div>
+    <div style={{ height: '100%', width: '100%', position: 'relative' }}>
+      <div style={{ height: '100%', width: '100%', backgroundColor: '#ecf0f1' }}>
+        {/* {close && <SidebarComponent onCloseHandled={handleCloseSide} />} */}
+        <div onClick={handleOpenSide}>122222222222222222222222222222222222222222222222dd</div>
+      </div>
+      {close && (
+        <div style={{ position: 'absolute', height: '100%', width: '100%', top: 0, left: 0 }}>
+          <SidebarComponent onCloseHandled={handleCloseSide} />
+        </div>
+      )}
     </div>
   );
 };

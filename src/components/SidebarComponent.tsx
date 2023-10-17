@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // type 정리 고려
 type c = {
@@ -8,6 +8,22 @@ type c = {
 const SidebarComponent = (props: c) => {
   const [closeState, setCloseState] = useState(false);
 
+  const sideRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent): void {
+      // 클릭하는 타겟이 포함되어있지 않은지 체크
+      if (sideRef.current && !sideRef.current.contains(e.target as Node)) {
+        setCloseState(false);
+        props.onCloseHandled(closeState);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [sideRef]);
+
   const handleEvent = () => {
     setCloseState(false);
     props.onCloseHandled(closeState);
@@ -15,8 +31,8 @@ const SidebarComponent = (props: c) => {
 
   return (
     <div
+      ref={sideRef}
       style={{
-        position: 'absolute',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
